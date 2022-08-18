@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 2;
+    box-sizing: border-box;
+}
+
+body{
+    background: #040618;
+
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2.5rem;
+    min-height: 100vh;
+    background: #040618;
+    margin-top: -60px;
+}
+
+/* Apresentação do Site */
+.ajuda{
+    margin-top: 60px;
+    text-align: center;
+    
+}
+
+.boas-vindas{
+    color: #fff;
+}
+
+.boas-vindas h1{
+   font-size: 2.9em;
+}
+
+.boas-vindas p{
+    font-size: 2.9em;
+ }
+ 
+ /* Cards */
+ 
+.card {
+    background: #287bff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    width: 20rem;
+    height: 28.125rem;
+    margin: 1.875rem;
+    border-radius: 1.25rem;
+    border-bottom-left-radius: 10rem;
+    border-bottom-right-radius: 10rem;
+    box-shadow: 0 15px 0 #fff, /* Cor do Risco Abaixo */
+            inset 0 -15px 0 rgba(255, 255, 255, 0.24),
+            0 45px 0 rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: -140px;
+    left: -40%;
+    padding: 0;
+    width: 100%;
+    height: 120%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2));
+    transform: rotate(35deg);
+    pointer-events: none; 
+    filter: blur(5px); 
+}
+
+.card:nth-child(1) {
+    background: rgb(4,6,24);
+    background: linear-gradient(74deg, rgba(4,6,24,1) 0%, rgba(41,24,136,1) 90%);
+}
+
+.card:nth-child(2) {
+    background: rgb(21,89,98);
+    background: linear-gradient(90deg, rgba(21,89,98,1) 0%, rgba(0,161,182,1) 35%, rgba(0,224,254,1) 100%);
+}
+
+.card .icon {
+    position: relative;
+    width: 140px;
+    height: 120px;
+    background: #040618; /* Background do ÍCONE */
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    box-shadow: 0 15px 0 rgba(0, 0, 0, 0.1),
+            inset 0 -8px 0 #fff; /* Cor da risca abaixo do icone */ 
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.card .icon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-top-right-radius: 50px;
+    box-shadow: 15px -15px 0 15px #040618; /* box shadow ESQUERDO (tem quer ter a mesma cor do background da página*/
+}
+.card .icon::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-top-left-radius: 50px;
+}
+.card .icon ion-icon {
+    color: #fff;
+    position: relative;
+    font-size: 6em;
+    z-index: 1000;
+    --ionicon-stroke-width: 24px;
+}
+
+.card .content {
+    position: absolute;
+    width: 100%;
+    padding: 30px;
+    padding-top: 150px;
+    text-align: center;
+}
+.card .content h2 {
+    font-size: 2.2rem;
+    color: #fff;
+    margin-bottom: 15px;
+}
+.card .content p {
+    color: #fff;
+    margin-top: 3rem;
+    line-height: 1.5rem;
+    font-size: 2rem;
+}
+
+.card .content a{
+    color: var(--cor-branca);
+    text-decoration: none;
+} 
+
+.card .content a:hover{
+    text-decoration: underline;
+    color: #bbb;
+} 
+
+

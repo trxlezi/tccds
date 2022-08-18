@@ -1,0 +1,817 @@
+/* Rem = 16px  */
+/* :root define váriaveis dentro do CSS */
+:root{
+    --cor-navbar:#291888;
+
+    --cor-secundaria: #4049bb;
+    --cor-primary: #291888;
+    --cor-danger: #e22c2c;
+    --cor-success: #00bf8e;
+    --cor-warning: #f7c94b;
+    --cor-redes:#4049bb;
+
+    --cor-comentario:#4049bb;
+    --cor-cabecalho:#040618;
+    --cor-categoria:#040618;
+    --cor-perguntasbg:#11162b;
+    --cor-perguntas:#4049bb;
+    --cor-avatar:#1eff00;
+    --cor-rodape:#040618;
+
+
+    --cor-branca: #fff;
+    --cor-preta: #000;
+
+    --cor-bg: #11162b;
+    --cor-bgl: #11162b;
+    --cor-bg2: #040618;
+
+    --container-width-lg: 80%;
+    --container-width-md: 90%;
+    --container-width-sm: 94%;
+
+    --transicao: all 400ms ease;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.7;
+    color: var(--cor-branca);
+    background: var(--cor-bg);
+}
+/* Light / Dark mode */
+input[type="checkbox"]{
+    display: none;
+}
+/*  */
+.light,
+.light header{
+    background-color: #ffff;
+    color: #000;
+}
+
+.container{ /* Containers EM GERAL */
+    width: var(--container-width-lg);
+    margin: 0 auto;
+}
+
+section {
+    padding: 6rem 0;  
+}
+
+section h2{
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.4rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+h4 {
+    font-size: 1.3rem;
+}
+
+a{
+    color: var(--cor-branca);
+    text-decoration: none;
+}
+
+li {
+    list-style: none;  
+}
+
+/* Tentativa de arrumar a logo para */
+/* #logo_etec{
+    text-align:left;
+} */
+
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.btn{
+    display: inline-block;
+    background: var(--cor-branca);
+    color: var(--cor-preta);
+    padding: 1rem 2rem;
+    border: 1px solid transparent;
+    font-weight: 500;
+    transition: var(--transicao);
+}
+
+.btn:hover{
+    background: transparent;
+    color: var(--cor-branca);
+    border-color: var(--cor-branca);
+}
+
+.btn-primary{
+    background: var(--cor-danger);
+    color: var(--cor-branca);
+
+}
+                            /* -------------> NAVBAR <-------------   */
+
+nav {
+    background:var(--cor-navbar)  ;
+    width: 100vw;
+    height: 5rem;
+    position: fixed;
+    top: 0;
+    z-index: 11; /*Sobrepôe tudo menor que ele(valor 11, o padrão é 0 para a maioria dos elementos */ 
+}
+
+/* -------------> JS que muda o style do NAVBAR ao scrollar para baixo <-------------*/
+.window-scroll{
+    background: var(--cor-primary);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+
+}
+/* -------------> *********************************** <-------------   */
+.nav_container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.2rem;
+}
+
+nav button{
+    display: none;
+    border: 0;
+}
+
+.nav_menu{
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin-top: 0.5rem;  
+}
+
+.nav_menu a{
+    font-size: 0.9rem;
+    transition: var(--transicao);
+}
+
+.nav_menu a:hover{
+    color:var(--cor-bg2)
+}
+                            /* -------------> CABEÇALHO <-------------   */
+header {
+    position:relative ;
+    top: 5rem;
+    overflow: hidden;
+    height: 70vh;
+    margin-bottom: 5rem;
+    background:var(--cor-cabecalho);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.cabecalho_container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    align-items: center;
+    gap: 4rem;
+    height: 100%;   
+}
+
+.cabecalho_direito{
+    width: 450px;
+}
+
+#pcbonito{
+    margin-left: 90px;
+    position:relative;
+    width: 100%;
+    height: 100%;
+}
+
+.cabecalho_esquerdo p{
+    margin: 1rem 0 2.4rem;
+}
+
+.cabecalho_esquerdo h1{
+    font-family: 'Inconsolata', monospace;
+    font-size: 50px;
+}
+                                /* -------------> ÁREA DE ATUAÇÃO <-------------   */
+.categorias {
+    background: var(--cor-bg1);
+    height: 32rem;
+}
+
+.categorias h1{
+    line-height: 1;
+    margin-bottom: 3rem;
+}
+
+.categorias_container {
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.area_categorias-esq{
+    margin-right: 4rem;
+}
+
+.area_categorias-esq p{
+    margin: 1rem 0 3rem;
+}
+
+.area_categorias-dir{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1.2rem;
+}
+
+.categoria {
+    background: var(--cor-categoria);
+    padding: 2rem;
+    border-radius: 2rem;
+    transition: var(--transicao);
+}
+.categoria:hover {
+    box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+                                /* -------------> Icones da ÁREA DE ATUAÇÃO  <-------------   */
+ .categoria_icon{
+    background: var(--cor-danger); /*  Banco de Dados  */
+    padding: 0.7rem;
+    border-radius: 0.9rem;
+}
+
+.categoria:nth-child(2) .categoria_icon{ /*  Redes  */
+    background-color: var(--cor-redes);
+}
+
+.categoria:nth-child(3) .categoria_icon{ /*  Negócios  */
+    background-color: var(--cor-success);
+}
+
+.categoria:nth-child(4) .categoria_icon{ /*    */
+    background-color: var(--cor-warning);
+}
+                                /* -------------> ************************************** <-------------   */
+.categoria h5{
+    margin: 2rem 0 1rem;
+}
+.categoria p{
+    font-size:0.85rem ;
+}
+                            /* -------------> Perguntas Frequentes <-------------   */
+.perguntas_freq {
+    background: var(--cor-perguntasbg);
+    box-shadow: inset 0 0 3rem rgba(0, 0, 0, 0.5)
+}
+
+.perguntas_freq_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.pergunta_freq {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    height: fit-content;
+    background: var(--cor-perguntas);
+    cursor: pointer;
+}
+
+.pergunta_freq h4 {
+    font-size: 1rem;
+    line-height: 2.2;
+}
+
+.pergunta_icon{
+    align-self: flex-start;
+    font-size: 1.2rem;
+}
+
+.pergunta_freq p {
+    margin-top: 0.8rem;
+    display: none;
+}
+
+.pergunta_freq.open p{
+    display: block;
+}
+
+                            /* -------------> Relatos/Falas de Ex-Alunos <-------------   */
+.comentarios_container{
+    overflow-x: hidden;
+    position: relative;
+    margin-bottom: 5rem;
+}
+
+.comentario {
+    padding-top: 2rem;
+}
+
+.avatar {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 1rem;
+    border: 1rem solid var(--cor-avatar);
+}
+
+.comentario_info {
+    text-align: center;
+}
+
+.comentario_corpo {
+    background: var(--cor-comentario);
+    padding: 2rem;
+    margin-top: 3rem;
+    position: relative;
+}
+
+.comentario_corpo::before{
+    content:"";
+    display: block;
+    background: linear-gradient(
+    135deg,
+    
+    var(--cor-comentario), 
+    var(--cor-comentario),
+    var(--cor-comentario)
+    );
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    left: 46.5%;
+    top: -1.5rem;
+    transform: rotate(45deg);
+}
+                                    /* -------------> EMENTA CSS <-------------  */
+.ementa_container{
+    position:relative ;
+    top: 6rem;
+    padding: 2rem;
+    overflow: hidden;
+    height: 70vh;
+    margin-bottom: 7rem;
+    text-align: center;
+    border-top: 2px solid var(--cor-branca);
+    border-bottom: 2px solid var(--cor-branca);
+}
+
+.ementa_container h1{
+    font-size: 3rem;
+}
+
+.ementa_container p{
+    margin-top: 2rem;
+    font-size: 1.5rem;
+}
+
+#botao_ementa{
+    background: var(--cor-navbar);
+    text-align: center;
+    margin-top: 9rem;  
+    width: 37rem ;
+    height: 7rem;
+    font-size: 1.7rem;
+    border-color:#fff ;
+    color: #fff;
+}
+#botao_ementa:hover{
+    color: #000;
+    border-color:#000;
+}
+                            /* -------------> Sobre o Curso - CSS <-------------  */
+.sobre_curso {
+    background: var(--cor-bg1);
+}
+.sobre_curso h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.sobre_container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.explicacao h1 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.explicacao > p {
+    margin: 1.6rem 0 2.5rem;
+    line-height: 2rem;
+    font-size: 1.2rem;
+    word-wrap: break-word;
+}
+
+.turmas{
+    margin-top: 2rem;
+}
+
+.turmas p{
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+.informacoes{
+    margin-top: 2rem;
+    text-align: center;
+    border-top: 1px solid var(--cor-branca);
+    border-bottom: 1px solid var(--cor-branca);  
+}
+
+.informacoes_adicionais{
+  margin-top: 2rem;
+}
+
+.informacoes_adicionais p{
+    text-align: center;
+    font-size: 1.2rem;
+    margin-left: 2.5rem;
+    margin-top: 1.5rem;
+}
+.tcc{
+    margin-top: 3rem;
+}
+.tcc p{
+    text-align: left;
+    font-size: 1.2rem;
+    margin-left: 2.5rem;
+    margin-top: 1.5rem;
+}
+
+.avaliacao{
+    margin-top: 3rem;
+}
+
+.avaliacao p{
+    text-align: left;
+    font-size: 1.2rem;
+    margin-left: 2.5rem;
+    margin-top: 1.5rem;   
+}
+
+.periodo{
+    margin-top: 3rem;
+}
+                                  /* -------------> Início CSS Contatos <-------------  */
+.contato_container {
+    background: var(--cor-comentario);
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 4rem;
+    height: 30rem;
+    margin: 7rem auto;
+    border-radius: 1rem;
+}
+
+                                            /* -------------> ASIDE CONTATO <-------------  */
+.contato_aside{
+    background: var(--cor-primary);
+    padding: 3rem;
+    border-radius: 1rem;
+    position: relative;
+    bottom: 10rem;
+}
+
+.aside_imagem{
+    width: 12rem;
+    margin-bottom: 2rem;
+}
+
+.contato_aside h2{
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.contato_aside p{
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+.contato_detalhes li{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.contato_socials{
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.contato_socials a{
+    background: var(--cor-bg2);
+    padding: 0.5rem;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    transition: var(--transicao);
+}
+
+.contato_socials a:hover{
+    background: transparent;
+}
+
+                                                /* -------------> FORMULÁRIO <-------------  */
+.contato_form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-right: 4rem;
+}
+
+.form_nome{
+    display: flex;
+    gap: 1.2rem;
+}
+
+.contato_form input[type="text"]{
+    width: 50%;
+}
+
+input, textarea{
+    width: 100%;
+    padding: 0.4rem;
+    background: var(--cor-bg);
+    color: var(--cor-branca);
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
+
+.contato_form .btn{
+    width: max-content;
+    margin-top: 0.1rem;
+    cursor: pointer;
+    margin: 0  auto;
+}
+
+ /* -------------> Footer <-------------  */
+ .rodape {
+    background: var(--cor-rodape);
+    padding-top: 5rem;
+    font-size: 0.9rem;  
+}
+
+.rodape ul li {
+    margin-bottom: 0.7rem;  
+}
+
+.rodape ul li a:hover{
+        text-decoration: underline;
+}
+
+.rodape ul {
+    margin: 1rem 0 0 -1.9rem;
+}
+
+.rodape_container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4rem;
+    background: var(--cor-rodape); 
+}
+
+
+.rodape_container > div h4 {
+    margin-bottom: 1.2rem;
+}
+
+.rodape_socials {
+    display: flex;
+    gap: 2rem;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+.rodape_copyright{
+    text-align: center;
+    margin-top: 4rem;
+    padding: 1.2rem 0;
+    border-top: 3px solid var(--cor-primary);
+}
+                                                    /* -------------> Consulta de Mídias para Tablets <-------------  */
+@media screen and (max-width: 1024px){
+    .container{
+        width: var(--container-width-md);
+    }
+
+    h1 {
+        font-size: 5rem;
+    }
+
+    h2{
+        font-size:3rem;
+    }
+
+    h3{
+        font-size: 2.5rem;
+    }
+
+    h4{
+        font-size: 2.2rem;
+    }
+                                                    /* -------------> NAVBAR <-------------  */
+    nav button{
+        display: inline-block;
+        background: transparent;
+        font-size: 1.8rem;
+        color: var(--cor-branca);
+        cursor: pointer;
+       
+    }
+
+    nav button#close-menu-btn{
+        display: none;
+    }
+
+    .nav_menu{
+        position: fixed;
+        top: 5rem;
+        right: 5%;
+        height: fit-content;
+        width: 18rem;
+        flex-direction: column;
+        gap: 0;
+        display: none;
+    }
+
+    .nav_menu li {
+        width: 100%;
+        height: 5.7rem;
+        animation: animateNavItems 400ms linear forwards;
+        transform-origin: top right;
+        opacity: 0;
+    }
+
+    .nav_menu li a {
+        background: var(--cor-primary);
+        box-shadow: -4rem 6rem 10rem rgba(0, 0, 0, 0.6);
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+    }
+    
+    .nav_menu li a:hover {
+        background: var(--cor-bg2);
+        color: var(--cor-branca);
+    }
+
+    .nav_menu_li:nth-child(2){  
+        animation-delay: 2s;
+    }
+    .nav_menu_li:nth-child(3){  
+        animation-delay: 3s;
+    }
+    .nav_menu_li:nth-child(2){  
+        animation-delay: 4s;
+    }
+
+    @keyframes animateNavItems{
+        0% {
+            transform: rotateZ(-90deg) rotateX(90deg) scale(0.1);
+        }
+        100% {
+            transform: rotateZ(0) rotateX(0) scale(1);
+            opacity: 1;
+        }
+    }
+
+    .nav_menu_li a {
+        background: var(--cor-primary);
+        box-shadow: -4rem 6rem 10rem rgba(0, 0, 0, 0.6);
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+    }
+
+    .nav_menu_li a:hover {
+        background: var(--cor-bg2);
+        color:var(--cor-branca);
+    }
+                                             /* -------------> CABECALHO <-------------  */
+   .cabecalho_container{ 
+        grid-template-columns: 30% 70%;
+   }
+                                            /* -------------> ÁREA DE ATUAÇÃO <-------------  */
+   .categorias{
+        height: auto;
+   }
+    
+   .categorias_container{
+        grid-template-columns: 1fr;
+        gap: 3rem;
+   }
+
+   .area_categorias-esq{
+        margin-right: 0;
+   }
+                                             /* -------------> PERGUNTAS FREQ. <-------------  */
+    .perguntas_freq_container{
+        grid-template-columns: 1fr;
+    }     
+                                            /* -------------> RODAPÉ <-------------  */
+    .rodape_container{
+        grid-template-columns: 1fr;
+        text-align: center;
+        justify-content: center;
+    }
+    .rodape_socials{
+        justify-content: center;
+    }
+
+    #iconetec{
+        width: fit-content;
+        margin-left: 14.5rem;
+    }
+
+
+}
+                                        /* -------------> Consulta de Mídias para Celulares <-------------  */
+@media screen and (max-width: 600px) { 
+    .container{
+        width: var(--container-width-sm);  
+    }
+                                            /* -------------> NAVBAR <-------------  */
+    .nav_menu{
+        right: 3%;
+    }
+                                            /* -------------> CABEÇALHO <-------------  */
+    header{
+        height: 100vh;
+
+    }
+    .cabecalho_container{
+        grid-template-columns: 1fr;
+        text-align: center;
+        margin-top: 0;
+
+    }
+                                             /* -------------> ÁREA DE ATUAÇÃO <-------------  */
+     .area_categorias-dir{
+        grid-template-columns: 1fr 1fr;
+        gap: 0.7;
+    } 
+    .categoria{
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+    .categoria_icon{
+        margin-top: 4px;
+        display: inline-block;
+    }
+                                            /* -------------> PERGUNTAS FREQ. <-------------  */
+    .comentario_corpo{
+        padding: 1.2rem;
+    }
+                                            /* -------------> RODAPÉ <-------------  */
+    .rodape_container{
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    #iconetec{
+        width: 10%;
+        height: 10%;
+    }
+
+    .rodape_socials{
+        justify-content: center;
+    }
+
+}
+
